@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+
+  <title>웹개발 종합반 1주차 숙제</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stylish&family=Yeon+Sung&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Yeon Sung', cursive;
+    }
+    .wrap{
+      width: 500px;
+      margin: auto;
+    }
+    .product,
+    .order {
+      margin-bottom: 30px;
+    }
+    .product-img {
+      width: 500px;
+    }
+    #product-price {
+      font-size: 18px;
+    }
+    .input-group {
+      width: 500px;
+      margin-bottom: 15px;
+    }
+    .order-btn {
+      display: block;
+      margin: auto;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="wrap">
+    <div class="product">
+      <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MN2D3_VW_34FR+watch-45-alum-midnight-nc-7s_VW_34FR_WF_CO?wid=750&hei=712&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1645128436997%2C1631661671000" class="product-img" alt="product image">
+      <h2>애플워치7 <span id="product-price">가격: 499,000원 / 1개</span></h2>
+      <p>
+        <ul>
+          <li>⌚️ 가장 큰 디스플레이<br>Series 6 대비 20%가량 커진 화면 영역을 자랑하는 Apple Watch Series 7의 새 Retina 디스플레이.</li>
+          <li>💪 향상된 내구성<br>가장 강력한 깨짐 방지 성능을 갖춘 전면 크리스털. 방진. 수영 최적화 성능.</li>
+          <li>🔋 급속 충전<br>Series 6 대비 최대 33% 더 빠른 충전 속도각주3와 여전히 온종일 지속되는 배터리 사용 시간.</li>
+          <li>💓 건강 및 웰빙<br>혈중 산소 앱과 센서 그리고 심전도 앱등 지금까지의 Apple Watch 중 가장 앞선 건강 및 웰빙 관리 기능.</li>
+        </ul>
+      </p>
+    </div>
+    <div class="order">
+      <h2>주문하기</h2>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">주문자 이름</span>
+          </div>
+          <input type="text" class="form-control" id="ordererName" aria-describedby="inputGroupPrepend">
+        </div>
+        <div class="input-group ">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="ordererCount">수량</label>
+          </div>
+            <select class="custom-select" id="ordererCount">
+              <option selected>-- 수량을 선택하세요 --</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="ordererAddress">주소</label>
+          </div>
+          <input type="text" class="form-control" id="ordererAddress" aria-describedby="inputGroupPrepend">
+        </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="ordererPhoneNumber">전화번호</label>
+          </div>
+          <input type="text" class="form-control" id="ordererPhoneNumber" aria-describedby="inputGroupPrepend">
+        </div>
+    </div>
+    <button class="btn btn-primary order-btn" type="submit">주문하기</button>
+  </div>
+</body>
+<script>
+  const orderBtn = document.querySelector(".order-btn");
+  const ordererName = document.querySelector("#ordererName");
+  const ordererCount = document.querySelector("#ordererCount");
+  const ordererAddress = document.querySelector("#ordererAddress");
+  const ordererPhoneNumber = document.querySelector("#ordererPhoneNumber");
+
+  function handleOrderBtn(){
+    if(ordererName.value === '' || ordererAddress.value === '' || ordererPhoneNumber.value === '' || !parseInt(ordererCount.value)){
+      alert("'주문하기' 정보를 모두 입력해주세요!");
+      return;
+    }
+    alert("정상적으로 주문이 완료되었습니다!");
+  }
+
+  orderBtn.addEventListener("click", handleOrderBtn);
+</script>
+</html>

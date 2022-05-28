@@ -1,0 +1,74 @@
+<!--
+중앙 배열 방법:
+1. 가로(width) 길이 고정 후, margin: auto 속성 추가하기
+2. 이후 padding 속성으로 조절
+** 글자 컴포넌트는 width 속성이 알아서 적용되지만, 글자가 아닌 컴포넌트(ex button)는 width 속성이 적용되지 않는다. 이때, display: block 속성을 사용하여 width 속성이 적용될 수 있게 만든다.
+
+구글 폰트 사용 방법:
+1. 구글 폰트 페이지 진입
+2. 마음에 드는 폰트 선택하여 ['select this style [+]'] 버튼 선택
+3. 오른쪽 사이드 바 <link> 태그들 복사하여 붙여넣기 (<link>는 <head> 안에 작성)
+4. 오른쪽 사이드 바 css font-family 속성 복사하여 붙여넣기. 이때, '* { }'에 속성 추가하여 페이지 모든 요소 적용하기 (<style>는 <head> 안에 작성)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gaegu&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+        .mytitle {
+            color: white;
+            width: 300px;
+            height: 200px;
+            text-align: center;
+            padding-top: 20px;
+
+            background-image: url("https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg");
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: auto;
+        }
+
+        .loginbtn {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="mytitle">
+            <h1>로그인 페이지</h1>
+            <h5>아이디, 패스워드를 입력해주세요</h5>
+        </div>
+        <p>ID: <input type="text"></p>
+        <p>PW: <input type="password"></p>
+        <button class="loginbtn">로그인하기</button>
+    </div>
+
+
+<!--    <div>-->
+<!--        <p>-->
+<!--            <span>ID: </span>-->
+<!--            <input type="text">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <span>PW: </span>-->
+<!--            <input type="password">-->
+<!--        </p>-->
+<!--        <button>로그인하기</button>-->
+<!--    </div>-->
+</body>
+</html>
