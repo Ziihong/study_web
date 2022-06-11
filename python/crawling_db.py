@@ -14,7 +14,6 @@ soup = BeautifulSoup(data.text, 'html.parser')
 
 # select_one('') -> 첫번째만, select('') -> 전부 list 형태로 반환
 # 우클릭 -> 검사 -> 해당 태그 우클릭 -> copy -> copy selector
-title = soup.select_one("#old_content > table > tbody > tr:nth-child(2) > td.title > div > a")
 tr_list = soup.select("#old_content > table > tbody > tr")
 
 for tr in tr_list:
